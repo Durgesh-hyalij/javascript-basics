@@ -16,6 +16,7 @@ const exampleButton = document.querySelector('#alert-btn');
 
 exampleButton.addEventListener('click', function() {
     alert('Hello! You clicked the button!');
+    console.log("button was click")
 });
 
 
@@ -45,6 +46,8 @@ const counterDisplay = document.querySelector('#counter-display');
 const incrementBtn = document.querySelector('#increment-btn');
 const decrementBtn = document.querySelector('#decrement-btn');
 const resetBtn = document.querySelector('#reset-btn');
+// const dblclick = document.querySelector('#dblclick');
+
 
 // Create a variable to store the count
 let count = 0;
@@ -54,20 +57,28 @@ function updateCounter() {
     counterDisplay.textContent = count;
 }
 
+counterDisplay.addEventListener('dblclick', function() {
+    count = count * 2;
+    updateCounter();
+});
+
 // EXAMPLE CODE (working demo):
 incrementBtn.addEventListener('click', function() {
     count++;
     updateCounter();
+    console.log("into the increase section")
 });
 
 decrementBtn.addEventListener('click', function() {
     count--;
     updateCounter();
+    console.log("into the decrease section")
 });
 
 resetBtn.addEventListener('click', function() {
     count = 0;
     updateCounter();
+    console.log("into the reset section")
 });
 
 
@@ -88,6 +99,12 @@ textInput.addEventListener('input', function(event) {
         textOutput.textContent = 'Your text will appear here...';
     } else {
         textOutput.textContent = text;
+    }
+});
+
+textInput.addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        alert('You typed: ' + this.value);
     }
 });
 
@@ -177,15 +194,15 @@ userForm.addEventListener('submit', function(event) {
 counterDisplay.addEventListener('dblclick', function() {
     count = count * 2;
     updateCounter();
-});
+    });
 
 
 // Challenge 2: Keyboard Event
 // When user presses Enter in the text input, show an alert with the text
 
 // EXAMPLE CODE (working demo):
-textInput.addEventListener('keypress', function(event) {
-    if (event.key === 'Enter') {
-        alert('You typed: ' + this.value);
-    }
-});
+// textInput.addEventListener('keypress', function(event) {
+//     if (event.key === 'Enter') {
+//         alert('You typed: ' + this.value);
+//     }
+// });
