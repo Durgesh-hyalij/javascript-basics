@@ -36,14 +36,19 @@ const box4 = document.querySelector('#box4');
 // EXAMPLE CODE (working demo):
 box2.addEventListener('click', function() {
     this.classList.toggle('active');
+    console.log('Box 2 active state:', this.classList.contains('active'));
+
 });
 
 box3.addEventListener('click', function() {
     this.classList.toggle('active');
+    console.log('Box 3 active state:', this.classList.contains('active'));
+
 });
 
 box4.addEventListener('click', function() {
     this.classList.toggle('active');
+    console.log('Box 4 active state:', this.classList.contains('active'));
 });
 
 
