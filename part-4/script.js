@@ -284,5 +284,5 @@ function loadTasks() {
 }
 
 // Uncomment these to enable persistence:
-// loadTasks();  // Call on page load
+loadTasks();  // Call on page load
 // Call saveTasks() after any task modification
